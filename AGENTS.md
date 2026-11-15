@@ -3,7 +3,7 @@
 - ZMK v0.3 (Zephyr 3.5). Board uses the legacy hardware model, so stay on v0.3-compatible modules
   (prospector-zmk-module `main`, not `feat/new-status-screens`).
 - Board: `boards/arm/link` (copy of cannonkeys/zmk-cannonkeys-keyboards). Dongle shield: `boards/shields/link_dongle`.
-- Keymap: `config/link.keymap` (used by halves and dongle). Dongle-only options: `config/link_dongle.conf`.
+- Keymap: `config/link.keymap` (used by halves and dongle). Dongle screen options: `config/dongle_screen.conf` (YADS, default) and `config/prospector_adapter.conf` (original Prospector screen); ZMK picks them up by shield name.
 
 ## Local build (mirrors GitHub Actions)
 

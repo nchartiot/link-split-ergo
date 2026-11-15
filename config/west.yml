@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,5 +17,9 @@ manifest:
     - name: prospector-zmk-module
       remote: carrefinho
       revision: 77a852293532879c992847e01db27abe4f94fa9f # main
+    # YADS dongle screen. Tag 0.1.2 targets ZMK v0.3; `upgrade-4.1` is for ZMK main.
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: 79d872fa1955ff0159c76ab725e35fd1c01c8ffb # 0.1.2
   self:
     path: config

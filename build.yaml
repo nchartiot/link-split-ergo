@@ -5,6 +5,13 @@ include:
   # ---------------------------------------------------------------
   # Prospector dongle setup: dongle is central, both halves are peripherals
   # ---------------------------------------------------------------
+  # Default dongle screen: YADS (config/dongle_screen.conf)
+  - board: seeeduino_xiao_ble
+    shield: link_dongle dongle_screen
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: link_dongle_yads
+  # Alternative: original Prospector screen (config/prospector_adapter.conf)
   - board: seeeduino_xiao_ble
     shield: link_dongle prospector_adapter
     snippet: studio-rpc-usb-uart
