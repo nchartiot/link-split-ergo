@@ -23,4 +23,5 @@ Swap board/shield/cmake-args per entry in `build.yaml`. Keep the west workspace 
 Add-on shield for YADS, used as `link_dongle dongle_screen yads_bongo_cat`. YADS stays unmodified: its
 `custom_status_screen.c` is compiled with `zmk_display_status_screen` renamed to `yads_display_status_screen`
 (deferred `set_source_files_properties` in the shield's CMakeLists), and `src/bongo_cat.c` provides the real
-`zmk_display_status_screen()` that builds the YADS screen and adds the cat. Re-check this if YADS is bumped.
+`zmk_display_status_screen()` that builds the YADS screen and adds the cat. The cat reacts to key presses
+(`zmk_position_state_changed`); `side_for_position()` encodes which keymap positions are on the left half. Re-check this if YADS is bumped.

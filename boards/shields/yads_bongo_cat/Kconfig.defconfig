@@ -2,7 +2,14 @@
 
 if SHIELD_YADS_BONGO_CAT
 
-config ZMK_WPM
-    default y
+config YADS_BONGO_CAT_MIN_TAP_MS
+    int "Minimum time a paw stays down per key press (ms)"
+    default 80
+    help
+      Keeps quick taps visible even if press and release arrive within one display refresh.
+
+config YADS_BONGO_CAT_IDLE_MS
+    int "Time without key presses before the cat goes back to resting (ms)"
+    default 1000
 
 endif # SHIELD_YADS_BONGO_CAT
