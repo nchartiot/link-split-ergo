@@ -1,0 +1,39 @@
+# This file generates the GitHub Actions matrix.
+# See https://zmk.dev/docs/user-setup#customization for details.
+---
+include:
+  # ---------------------------------------------------------------
+  # Prospector dongle setup: dongle is central, both halves are peripherals
+  # ---------------------------------------------------------------
+  - board: seeeduino_xiao_ble
+    shield: link_dongle prospector_adapter
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: link_dongle_prospector
+  - board: link_left
+    shield: nice_view
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: link_left_peripheral
+  - board: link_right
+    shield: nice_view
+    artifact-name: link_right
+
+  # ---------------------------------------------------------------
+  # Standalone setup (no dongle): left half is central
+  # Pair with the same link_right firmware as above.
+  # ---------------------------------------------------------------
+  - board: link_left
+    shield: nice_view
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: link_left_central_studio
+
+  # ---------------------------------------------------------------
+  # Settings reset (flash before switching between setups)
+  # ---------------------------------------------------------------
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: settings_reset_dongle
+  - board: link_left
+    shield: settings_reset
+    artifact-name: settings_reset_link

@@ -1,0 +1,19 @@
+manifest:
+  defaults:
+    revision: v0.3
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      import: app/west.yml
+    # `main` branch of prospector-zmk-module targets ZMK v0.3 / Zephyr 3.5.
+    # Do not switch to `feat/new-status-screens` unless zmk is moved to `main` (Zephyr 4.1).
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: 77a852293532879c992847e01db27abe4f94fa9f # main
+  self:
+    path: config
