@@ -17,3 +17,10 @@ docker run --rm -v /tmp/linkws:/ws -v /tmp/linksrc:/src -w /ws zmkfirmware/zmk-b
 
 Swap board/shield/cmake-args per entry in `build.yaml`. Keep the west workspace separate from the repo
 (the repo's `zephyr/module.yml` would collide with the `zephyr/` checkout).
+
+## Bongo cat (`boards/shields/yads_bongo_cat`)
+
+Add-on shield for YADS, used as `link_dongle dongle_screen yads_bongo_cat`. YADS stays unmodified: its
+`custom_status_screen.c` is compiled with `zmk_display_status_screen` renamed to `yads_display_status_screen`
+(deferred `set_source_files_properties` in the shield's CMakeLists), and `src/bongo_cat.c` provides the real
+`zmk_display_status_screen()` that builds the YADS screen and adds the cat. Re-check this if YADS is bumped.
