@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/carrefinho
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -21,5 +23,9 @@ manifest:
     - name: zmk-dongle-screen
       remote: janpfischer
       revision: 79d872fa1955ff0159c76ab725e35fd1c01c8ffb # 0.1.2
+    # nice!view screens for the halves (`nice_epaper` shield). Tested by its author on ZMK v0.3.
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3 # main
   self:
     path: config

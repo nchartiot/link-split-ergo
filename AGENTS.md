@@ -25,3 +25,11 @@ Add-on shield for YADS, used as `link_dongle dongle_screen yads_bongo_cat`. YADS
 (deferred `set_source_files_properties` in the shield's CMakeLists), and `src/bongo_cat.c` provides the real
 `zmk_display_status_screen()` that builds the YADS screen and adds the cat. The cat reacts to key presses
 (`zmk_position_state_changed`); `side_for_position()` encodes which keymap positions are on the left half. Re-check this if YADS is bumped.
+
+## nice!view screens (zmk-nice-oled)
+
+Halves use the `nice_epaper` shield from mctechnology17/zmk-nice-oled (nice!view support). Shared options in
+`config/nice_epaper.conf`; each half's picture is picked via `cmake-args` in `build.yaml` (a `link_left.conf` would also
+be applied to the settings-reset builds, which lack this module, and break them). Gotcha: when switching to the gem animation also set
+`CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_GEM=y`, otherwise `..._ANIMATION_PERIPHERAL_MS` has no value
+and the build fails in `configs.c`.
