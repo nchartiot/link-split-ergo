@@ -23,13 +23,13 @@ include:
     cmake-args: >-
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
       -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT=n
-      -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_GEM=y
+      -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN=y
     artifact-name: link_left_peripheral
   - board: link_right
     shield: nice_epaper
     cmake-args: >-
       -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT=n
-      -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN=y
+      -DCONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_GEM=y
     artifact-name: link_right
 
   # ---------------------------------------------------------------
